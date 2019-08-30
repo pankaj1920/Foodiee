@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#D81B60</color>
+    <color name="colorPrimaryDark">#F72414</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="Black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="grey">#D8D1D4</color>
+    <color name="buttonBg">#F02C1E</color>
+    <color name="orange">#FF5722</color>
+    <color name="Blue">#3F51B5</color>
+    <color name="greyTextColor">#646163</color>
+    <color name="green">#1DAC22</color>
+    <color name="DarkGreen">#08920D</color>
+    <color name="allowLocRipple">#7FD582</color>
+    <color name="star">#7C7B7B</color>
+    <color name="Toolbar">#F7F44336</color>
+
+</resources>
