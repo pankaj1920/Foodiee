@@ -13,7 +13,6 @@ public class MealFragmentModel {
         this.mealDishPrice = mealDishPrice;
     }
 
-
     public int getMealImage() {
         return mealImage;
     }

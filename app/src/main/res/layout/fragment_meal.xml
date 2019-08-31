@@ -41,23 +41,37 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="20dp"
             android:paddingLeft="10dp"
-            android:text="Banglore"
+            android:text="G3 Electronic City Phase1 Banglore"
             android:textColor="@color/Black"
             android:textSize="16dp"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/locationlogo"
             app:layout_constraintTop_toBottomOf="@id/mealToolbar" />
 
+        <TextView
+            android:id="@+id/recomended"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:text="Recomended"
+            android:textColor="@color/Black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeCurrentLocation" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/mealRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/homeCurrentLocation" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recomended" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

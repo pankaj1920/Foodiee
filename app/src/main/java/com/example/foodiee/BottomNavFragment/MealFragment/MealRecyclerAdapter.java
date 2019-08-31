@@ -1,23 +1,21 @@
 package com.example.foodiee.BottomNavFragment.MealFragment;
 
-import android.content.Context;
+import android.app.AlertDialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodiee.R;
 
 import java.util.ArrayList;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapter.MR_VH> {
 
@@ -36,6 +34,7 @@ public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MR_VH holder, int position) {
+
         holder.mealImage.setImageResource(foodItem.get(position).getMealImage());
         holder.mealDishName.setText(foodItem.get(position).getMealDishName());
         holder.mealDishCategory.setText(foodItem.get(position).getMealDishCategory());
@@ -49,23 +48,23 @@ public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapte
     }
 
     public class MR_VH extends RecyclerView.ViewHolder {
-
-        CircleImageView mealImage;
+        ImageView mealImage;
         Button mealAddBtn;
         TextView mealDishName, mealDishCategory, mealDishPrice;
 
         public MR_VH(@NonNull View itemView) {
             super(itemView);
-            mealImage = (CircleImageView) itemView.findViewById(R.id.mealImage);
+
+            mealImage = (ImageView) itemView.findViewById(R.id.mealImage);
             mealDishName = (TextView) itemView.findViewById(R.id.mealDishName);
             mealDishCategory = (TextView) itemView.findViewById(R.id.mealDishCategory);
             mealDishPrice = (TextView) itemView.findViewById(R.id.mealDishPrice);
             mealAddBtn = (Button) itemView.findViewById(R.id.mealAddBtn);
 
-
             mealAddBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     //before inflating the custom alert dialog layout, we will get the current activity viewgroup
                     ViewGroup viewGroup = view.findViewById(android.R.id.content);
 
@@ -89,6 +88,5 @@ public class MealRecyclerAdapter extends RecyclerView.Adapter<MealRecyclerAdapte
             });
         }
     }
-
 
 }

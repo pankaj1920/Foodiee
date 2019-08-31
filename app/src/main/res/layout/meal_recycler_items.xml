@@ -9,36 +9,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/mealImage"
-            android:layout_width="70dp"
-            android:layout_marginTop="10dp"
-            android:layout_height="70dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
             android:src="@drawable/foodimg"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toEndOf="@id/mealImage"
-            app:layout_constraintEnd_toStartOf="@id/mealPrice"
-            app:layout_constraintBottom_toBottomOf="@id/mealView"
-            app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/vegIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/veg_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mealImage" />
+
 
         <TextView
             android:id="@+id/mealDishName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="Hyderabad Biryaani"
             android:textColor="@color/Black"
             android:textSize="17sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vegIcon"
+            app:layout_constraintTop_toBottomOf="@id/mealImage" />
 
         <TextView
             android:id="@+id/mealDishCategory"
@@ -46,70 +52,50 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
             android:text="Biryani,Mughlai,South Indian"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mealDishName" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <FrameLayout
-            android:id="@+id/mealPrice"
-            android:layout_width="70dp"
-            android:layout_height="23dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/DarkGreen"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/mealReupee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:text="@string/rupeeSymbol"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mealDishCategory" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="8dp">
-
-                <TextView
-                    android:id="@+id/mealReupee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"
-                    android:text="@string/rupeeSymbol"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/mealDishPrice"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"
-                    android:text="\t180.00"
-                    android:textColor="@color/white"
-                    app:layout_constraintStart_toEndOf="@id/mealReupee"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </FrameLayout>
+        <TextView
+            android:id="@+id/mealDishPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:text="180"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/Black"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@id/mealReupee"
+            app:layout_constraintTop_toBottomOf="@id/mealDishCategory" />
 
         <Button
             android:id="@+id/mealAddBtn"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginTop="12dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/add_meal_ripple"
             android:text="Add"
             android:textAllCaps="false"
-            android:textColor="@color/buttonBg"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/mealPrice" />
-
-    <View
-        android:id="@+id/mealView"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:background="@color/grey"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mealAddBtn"
-        android:layout_marginTop="20dp"/>
+            android:textColor="@color/buttonBg"
+            app:layout_constraintTop_toBottomOf="@id/mealDishCategory"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
